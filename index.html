@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date - Lay</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap');
+        
+        body {
+            background-color: #A31D1D; /* Tom de vermelho vintage inspirado na 2ª imagem */
+            color: #F4E7C3;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle, #b82121 0%, #7a1212 100%);
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h2 {
+            font-size: 2em;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5.5em;
+            letter-spacing: 6px;
+            margin: 10px 0;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            line-height: 0.9;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            margin: 20px 0 40px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .time-box {
+            background: rgba(244, 231, 195, 0.1);
+            border: 2px solid #F4E7C3;
+            padding: 15px 10px;
+            border-radius: 8px;
+            min-width: 70px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .time-box span {
+            display: block;
+            font-size: 2.8em;
+            line-height: 1;
+        }
+        .time-box p {
+            margin: 5px 0 0 0;
+            font-size: 0.8em;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .date-location {
+            margin-top: 30px;
+            font-size: 1.3em;
+            border-top: 1px solid rgba(244, 231, 195, 0.5);
+            border-bottom: 1px solid rgba(244, 231, 195, 0.5);
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .divider {
+            width: 1px;
+            height: 40px;
+            background-color: rgba(244, 231, 195, 0.5);
+        }
+        .rsvp-form {
+            margin-top: 40px;
+            background: rgba(0,0,0,0.25);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .rsvp-form h3 {
+            margin-top: 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #F4E7C3;
+            background: rgba(255, 255, 255, 0.1);
+            color: #F4E7C3;
+            font-family: 'Playfair Display', serif;
+            font-size: 1em;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input::placeholder {
+            color: rgba(244, 231, 195, 0.7);
+        }
+        button {
+            background-color: #F4E7C3;
+            color: #A31D1D;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+
+        .gift-list {
+            margin-top: 40px;
+            padding: 30px 10px;
+            border-top: 1px solid rgba(244, 231, 195, 0.3);
+            width: 100%;
+        }
+        .gift-list h3 {
+            margin-top: 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        .gift-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #F4E7C3;
+            border: 1px solid #F4E7C3;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1.5px;
+            font-size: 1.2em;
+            border-radius: 4px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        .gift-btn:hover {
+            background-color: #F4E7C3;
+            color: #A31D1D;
+        }
+        .pix-box {
+            background: rgba(0,0,0,0.15);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px dashed rgba(244, 231, 195, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Save the Date</h2>
+        <h1>Lay's Party</h1>
+        <div class="subtitle">Dress up • Drink • Karaoke • Dance</div>
+        
+        <div class="countdown" id="countdown">
+            <div class="time-box"><span id="days">00</span><p>Dias</p></div>
+            <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
+            <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
+            <div class="time-box"><span id="seconds">00</span><p>Seg</p></div>
+        </div>
+
+        <div class="date-location">
+            <div>11 SET 2026</div>
+            <div class="divider"></div>
+            <div>19:00</div>
+        </div>
+
+        <div class="rsvp-form">
+            <h3>Confirme sua presença</h3>
+            <form id="rsvpForm" action="/rsvp" method="POST">
+                <input type="text" name="name" placeholder="Seu Nome Completo" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <button type="submit">Confirmar</button>
+            </form>
+        </div>
+
+        <!-- INÍCIO DA LISTA DE PRESENTES -->
+        <div class="gift-list">
+            <h3>Lista de Presentes</h3>
+            <p style="font-size: 1.1em; margin-bottom: 25px;">
+                Sua presença é o maior presente! Mas se quiser mimar a Lay, aqui estão algumas opções:
+            </p>
+            
+            <!-- Caixa do PIX -->
+            <div class="pix-box">
+                <p style="margin: 0 0 10px 0; font-family: 'Bebas Neue', sans-serif; font-size: 1.5em; letter-spacing: 1px;">Presente via PIX</p>
+                <p style="margin: 0; font-size: 0.9em;">Chave PIX (E-mail):<br>
+                <strong style="font-size: 1.2em; letter-spacing: 1px;">laylaamouraa@gmail.com</strong></p>
+            </div>
+
+            <!-- Botões de Links Externos -->
+            <a href="https://www.amazon.com.br/hz/wishlist/ls/N4CRGJCRIMJQ?ref_=wl_share" class="gift-btn" target="_blank">Lista Amazon</a>
+        </div>
+        <!-- FIM DA LISTA DE PRESENTES -->
+    </div>
+
+    <script>
+        // Configura a data do aniversário (11 de setembro de 2026 às 19:00)
+        const countDownDate = new Date("Sep 11, 2026 19:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h2 style='font-size: 3em; font-family: Bebas Neue;'>É HOJE!</h2>";
+            }
+        }, 1000);
+        
+        // Comportamento para visualização local (caso abra o HTML direto no navegador)
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            if (window.location.protocol === 'file:') {
+                e.preventDefault();
+                alert('Sua presença foi confirmada localmente! (Nota: Para salvar os dados e enviar e-mails, você precisa rodar o arquivo app.py).');
+            }
+        });
+    </script>
+</body>
+</html>
