@@ -69,7 +69,7 @@ def rsvp():
             }}
             p {{
                 font-size: 1.3em;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
             }}
             .btn-voltar {{
                 display: inline-block;
