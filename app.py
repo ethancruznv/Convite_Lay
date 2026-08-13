@@ -66,10 +66,11 @@ def rsvp():
                 font-size: 3em;
                 letter-spacing: 2px;
                 margin-top: 0;
+                margin-bottom: 0;
             }}
             p {{
                 font-size: 1.3em;
-                margin-bottom: 10px;
+                margin-bottom: 30px;
             }}
             .btn-voltar {{
                 display: inline-block;
